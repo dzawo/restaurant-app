@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Ingredient } from '../shared/ingedient.model';
+import { ignoreElements } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-list',
@@ -14,5 +15,9 @@ export class ShoppingListComponent {
       new Ingredient('Onions', 3330.04),
       new Ingredient('Tomatoes', 3330.04),
     ];
+  }
+
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients = [...this.ingredients, ingredient];
   }
 }
